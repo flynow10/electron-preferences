@@ -26,11 +26,14 @@ class Sidebar extends React.Component {
 				mask: `url(${url}) no-repeat center / contain`,
 				WebkitMask: `url(${url}) no-repeat center / contain`,
 			};
+			let icon;
+			if (section.icon) {
 
-			const isDefaultIcon = !(section.icon?.includes('.'));
+				const isDefaultIcon = !(section.icon.includes('.'));
 
-			const icon
-				= !isDefaultIcon ? <img className='section-icon' src={section.icon}/> : <div className='section-icon' style={style} />;
+				icon = !isDefaultIcon ? <img className='section-icon' src={section.icon}/> : <div className='section-icon' style={style} />;
+
+			}
 
 			return (
 				<HideableComponent allPreferences={ preferences } field={ section }>
