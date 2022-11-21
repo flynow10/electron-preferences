@@ -27,7 +27,7 @@ class Sidebar extends React.Component {
 				WebkitMask: `url(${url}) no-repeat center / contain`,
 			};
 
-			const isDefaultIcon = !section.icon.includes('.');
+			const isDefaultIcon = !(section.icon?.includes('.'));
 
 			const icon
 				= !isDefaultIcon ? <img className='section-icon' src={section.icon}/> : <div className='section-icon' style={style} />;
